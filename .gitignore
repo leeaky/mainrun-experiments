@@ -33,6 +33,10 @@ mainrun*.log
 .DS_Store
 Thumbs.db
 
-# Temporary configs & archives
+# Temporary configs, archives & backups
 submission.zip
 cfg*.json
+*.bundle
+*.bak
+*backup*
+*.tar*
