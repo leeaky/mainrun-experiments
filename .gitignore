@@ -1,0 +1,38 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv*/
+env/
+venv/
+.env
+
+# Testing & caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data cache (HF datasets)
+data/
+mainrun/data/
+
+# Logs (keep reference traces in results/logs/)
+/logs/
+mainrun/logs/
+mainrun*.log
+!results/logs/
+!results/logs/*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary configs & archives
+submission.zip
+cfg*.json

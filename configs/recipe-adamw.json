@@ -1,0 +1,1 @@
+﻿{"optimizer":"adamw","lr":0.0012,"weight_decay":0.01,"scaled_residual_init":true,"shuffle_batches":true,"lr_schedule":"wsd"}

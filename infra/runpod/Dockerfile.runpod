@@ -1,0 +1,10 @@
+# RunPod pod-image adapter: the mainrun devcontainer image, unchanged, plus the
+# two NVIDIA env vars the nvidia-container-runtime reads from IMAGE config (not
+# `docker run -e`) to decide how much GPU support to inject. Without these baked
+# in, some hosts inject only the nvidia-smi CLI hook and CUDA init fails with
+# "CUDA unknown error". Base image is built from ./Dockerfile and pushed as
+# leeaky/mainrun-devcontainer:latest.
+FROM leeaky/mainrun-devcontainer:latest
+
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility

@@ -1,0 +1,75 @@
+{
+  "config": {
+    "seed": 1337,
+    "num_titles": 100000,
+    "val_frac": 0.1,
+    "eos_token": "<eos>",
+    "vocab_sizes": [
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768,
+      65536
+    ],
+    "min_support": 5,
+    "risk_threshold": 0.25,
+    "tokenizer_trained_on": "train_titles only (non-leaky; differs from train.py which trains on train+val)",
+    "knee_method": "kneed.KneeLocator",
+    "knee_vocab_size": 16384,
+    "threshold_crossing_vocab_size": 32768,
+    "smoke": false
+  },
+  "results": [
+    {
+      "vocab_size": 1024,
+      "vocab_actual": 1024,
+      "val_chars_per_token": 2.5034688862816283,
+      "n_vocab_undertrained": 24,
+      "frac_undertrained": 0.0234375
+    },
+    {
+      "vocab_size": 2048,
+      "vocab_actual": 2048,
+      "val_chars_per_token": 2.925330974220484,
+      "n_vocab_undertrained": 35,
+      "frac_undertrained": 0.01708984375
+    },
+    {
+      "vocab_size": 4096,
+      "vocab_actual": 4096,
+      "val_chars_per_token": 3.3950729214825666,
+      "n_vocab_undertrained": 71,
+      "frac_undertrained": 0.017333984375
+    },
+    {
+      "vocab_size": 8192,
+      "vocab_actual": 8192,
+      "val_chars_per_token": 3.8751739026145358,
+      "n_vocab_undertrained": 190,
+      "frac_undertrained": 0.023193359375
+    },
+    {
+      "vocab_size": 16384,
+      "vocab_actual": 16384,
+      "val_chars_per_token": 4.314339778120279,
+      "n_vocab_undertrained": 834,
+      "frac_undertrained": 0.0509033203125
+    },
+    {
+      "vocab_size": 32768,
+      "vocab_actual": 32768,
+      "val_chars_per_token": 4.650584771273008,
+      "n_vocab_undertrained": 10021,
+      "frac_undertrained": 0.305816650390625
+    },
+    {
+      "vocab_size": 65536,
+      "vocab_actual": 65536,
+      "val_chars_per_token": 4.8316329146372725,
+      "n_vocab_undertrained": 46532,
+      "frac_undertrained": 0.71002197265625
+    }
+  ]
+}

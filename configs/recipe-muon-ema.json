@@ -1,0 +1,1 @@
+﻿{"optimizer":"muon","muon_lr":0.02,"lr":0.0012,"weight_decay":0.01,"shuffle_batches":true,"lr_schedule":"wsd","ema_decay":0.997}
