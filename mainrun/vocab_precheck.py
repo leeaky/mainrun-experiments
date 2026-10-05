@@ -93,24 +93,10 @@ KNEE_FLAT_FRAC = 0.50     # manual-fallback knee: first doubling whose compressi
 # Reuse train.py's data + tokenizer code unmodified.                          #
 # --------------------------------------------------------------------------- #
 def import_from_train():
-    """Return (get_titles, train_tokenizer, BPETokenizer) from the real train.py.
-
-    train.py runs `import utils` at module load, and utils.py's _check_devcontainer()
-    calls sys.exit(1) unless /root/.mainrun exists. Inside the Mainrun devcontainer
-    that file exists, so `import utils` succeeds naturally and the stub below is
-    never installed.
-
-    OUTSIDE any container (e.g. no Docker available) we pre-register an empty
-    `utils` module so the guard can't fire: train.py only does `import utils` and
-    never calls into it, and it has no other import-time side effects before its
-    `if __name__ == "__main__"` guard, so an empty module is sufficient. This keeps
-    the diagnostic runnable without a devcontainer without touching train.py.
-    """
+    """Return (get_titles, train_tokenizer, BPETokenizer) from train.py."""
     here = Path(__file__).resolve().parent
     if str(here) not in sys.path:
         sys.path.insert(0, str(here))
-    if not Path("/root/.mainrun").exists():
-        sys.modules.setdefault("utils", types.ModuleType("utils"))
     from train import get_titles, train_tokenizer, BPETokenizer
     return get_titles, train_tokenizer, BPETokenizer
 
